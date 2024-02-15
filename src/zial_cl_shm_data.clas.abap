@@ -15,9 +15,6 @@ CLASS zial_cl_shm_data DEFINITION
     METHODS add_shm_data
       IMPORTING is_shm_data TYPE zial_s_shm_data.
 
-  PROTECTED SECTION.
-    DATA mt_shm_data TYPE zial_tt_shm_data.
-
     METHODS bind_data_ref_to_area
       IMPORTING io_area            TYPE REF TO zial_cl_shm_area
                 it_shm_data        TYPE zial_tt_shm_data
@@ -26,6 +23,9 @@ CLASS zial_cl_shm_data DEFINITION
     METHODS unbind_data_ref_from_area
       IMPORTING io_area            TYPE REF TO zial_cl_shm_area
       RETURNING VALUE(rt_shm_data) TYPE zial_tt_shm_data.
+
+  PROTECTED SECTION.
+    DATA mt_shm_data TYPE zial_tt_shm_data.
 
 ENDCLASS.
 

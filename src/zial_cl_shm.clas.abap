@@ -12,7 +12,7 @@
 "! <li>SHMM (Content)</li>
 "! </ul></p>
 CLASS zial_cl_shm DEFINITION
-  PUBLIC
+  PUBLIC FINAL
   CREATE PUBLIC.
 
   PUBLIC SECTION.
@@ -26,7 +26,6 @@ CLASS zial_cl_shm DEFINITION
 
     CLASS-METHODS free.
 
-  PRIVATE SECTION.
 ENDCLASS.
 
 
