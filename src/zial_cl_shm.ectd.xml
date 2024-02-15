@@ -88,71 +88,26 @@
     <PARAMETERS>
      <ETPAR_GUIX>
       <item>
-       <PNAME>DUMMIES_ADD</PNAME>
+       <PNAME>PARAM</PNAME>
        <PTYP>V</PTYP>
-       <PDESC>Dummy data</PDESC>
+       <PDESC>Shared memory: Parameter name</PDESC>
        <PINDEX>0001</PINDEX>
-       <XMLREF_TYP>D</XMLREF_TYP>
-       <PSTRUC_TYP>T</PSTRUC_TYP>
-       <PREF_NAME>BUX_DUMMY_TABTYPE</PREF_NAME>
-       <PDATLEN>0000</PDATLEN>
-       <PINTLEN>000000</PINTLEN>
+       <PREF_TYPE>DTEL</PREF_TYPE>
+       <PREF_NAME>ZIAL_DE_SHM_PARAMETER_NAME</PREF_NAME>
+       <PDATTYP>CHAR</PDATTYP>
+       <PDATLEN>0030</PDATLEN>
+       <PINTTYP>C</PINTTYP>
+       <PINTLEN>000060</PINTLEN>
        <PDECIMALS>000000</PDECIMALS>
        <SORT_LNR>0001</SORT_LNR>
-       <PREF_NAME2>BUX_DUMMY_TABTYPE</PREF_NAME2>
-       <VALUE>&lt;VALUE&gt;</VALUE>
-       <VAL_TYPE>T</VAL_TYPE>
+       <PREF_NAME2>ZIAL_DE_SHM_PARAMETER_NAME</PREF_NAME2>
+       <VALUE>CHARS_TO_EXCLUDE</VALUE>
        <TAB_INDEX>0</TAB_INDEX>
-       <DEEP_STRU>
-        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xml.sap.com/2003/05/eCATT/ddic" version="1.0">
-         <xsd:complexType name="BUX_DUMMY_TABTYPE">
-          <annotation>
-           <documentation>I==O==C=T=K==D=BUX_DUMMY_TABTYPE=A=h=L=000000=doc=Dummy Table Type for generating attributes for Mass Update</documentation>
-          </annotation>
-          <sequence>
-           <element name="item" type="BUX_DUMMY_STRUCTURE" minOccurs="0" maxOccurs="unbounded"/>
-          </sequence>
-         </xsd:complexType>
-         <xsd:complexType name="BUX_DUMMY_STRUCTURE">
-          <annotation>
-           <documentation>I==O==C=S=K==D=BUX_DUMMY_STRUCTURE=A=u=L=000000=doc=Dummy St</documentation>
-          </annotation>
-          <sequence>
-           <element name="DUMMY_1" minOccurs="0">
-            <annotation>
-             <documentation>I==O==C==K==D=CHAR10=A=C=L=000010=doc=Character Field Length</documentation>
-            </annotation>
-            <simpleType>
-             <restriction base="string">
-              <maxLength value="10"/>
-             </restriction>
-            </simpleType>
-           </element>
-          </sequence>
-         </xsd:complexType>
-        </xsd:schema>
-       </DEEP_STRU>
-       <DEEP_DATA>
-        <ddic:BUX_DUMMY_TABTYPE xmlns:ddic="http://xml.sap.com/2003/05/eCATT/ddic">
-         <item>
-          <DUMMY_1>123</DUMMY_1>
-         </item>
-         <item>
-          <DUMMY_1>456</DUMMY_1>
-         </item>
-         <item>
-          <DUMMY_1>789</DUMMY_1>
-         </item>
-         <item>
-          <DUMMY_1>012</DUMMY_1>
-         </item>
-        </ddic:BUX_DUMMY_TABTYPE>
-       </DEEP_DATA>
       </item>
       <item>
-       <PNAME>DUMMIES_EXCLUDED</PNAME>
+       <PNAME>VALUE</PNAME>
        <PTYP>V</PTYP>
-       <PDESC>Dummy data</PDESC>
+       <PDESC>Shared memory: Data in area</PDESC>
        <PINDEX>0002</PINDEX>
        <XMLREF_TYP>D</XMLREF_TYP>
        <PSTRUC_TYP>T</PSTRUC_TYP>
@@ -197,10 +152,13 @@
        <DEEP_DATA>
         <ddic:BUX_DUMMY_TABTYPE xmlns:ddic="http://xml.sap.com/2003/05/eCATT/ddic">
          <item>
-          <DUMMY_1>123</DUMMY_1>
+          <DUMMY_1>A</DUMMY_1>
          </item>
          <item>
-          <DUMMY_1>789</DUMMY_1>
+          <DUMMY_1>C</DUMMY_1>
+         </item>
+         <item>
+          <DUMMY_1>D</DUMMY_1>
          </item>
         </ddic:BUX_DUMMY_TABTYPE>
        </DEEP_DATA>

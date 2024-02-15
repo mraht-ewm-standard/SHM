@@ -12,70 +12,31 @@
 "! <li>SHMM (Content)</li>
 "! </ul></p>
 CLASS zial_cl_shm DEFINITION
-  PUBLIC FINAL
+  PUBLIC
   CREATE PUBLIC.
 
   PUBLIC SECTION.
-    "! <p class="shorttext synchronized">Set buffered data</p>
-    "!
-    "! @parameter is_data   | <p class="shorttext synchronized">Data to be buffered</p>
-    "! @raising   zcx_error | <p class="shorttext synchronized">Error</p>
-    CLASS-METHODS set
-      IMPORTING is_data TYPE zial_s_shm_data
-      RAISING   zcx_error.
-
-    "! <p class="shorttext synchronized">Add data to buffered data</p>
-    "!
-    "! @parameter is_data   | <p class="shorttext synchronized">Data to be added to buffered data</p>
-    "! @raising   zcx_error | <p class="shorttext synchronized">Error</p>
-    CLASS-METHODS add
-      IMPORTING is_data TYPE zial_s_shm_data
-      RAISING   zcx_error.
-
-    "! <p class="shorttext synchronized">Get buffered data</p>
-    "!
-    "! @parameter rs_data   | <p class="shorttext synchronized">Buffered data</p>
-    "! @raising   zcx_error | <p class="shorttext synchronized">Error</p>
     CLASS-METHODS get
-      RETURNING VALUE(rs_data) TYPE zial_s_shm_data
+      RETURNING VALUE(rt_shm_data) TYPE zial_tt_shm_data
       RAISING   zcx_error.
 
-    "! <p class="shorttext synchronized">Clear all data in buffer</p>
-    "!
-    "! @raising zcx_error | <p class="shorttext synchronized">Error</p>
-    CLASS-METHODS clear
-      RAISING zcx_error.
+    CLASS-METHODS set
+      IMPORTING it_shm_data TYPE zial_tt_shm_data
+      RAISING   zcx_error.
 
-    CLASS-METHODS close.
+    CLASS-METHODS free.
 
+  PRIVATE SECTION.
 ENDCLASS.
 
 
 CLASS zial_cl_shm IMPLEMENTATION.
 
-  METHOD set.
+  METHOD free.
 
-    DATA(lv_retried) = abap_false.
-
-    TRY.
-        DATA(lo_area) = zial_cl_shm_area=>attach_for_update( ).
-        lo_area->root->set( is_data ).
-        lo_area->detach_commit( ).
-
-      CATCH cx_root INTO DATA(lx_error).
-        CASE lv_retried.
-          WHEN abap_true.
-            RAISE EXCEPTION TYPE zcx_error
-              EXPORTING previous = lx_error.
-
-          WHEN abap_false.
-            lv_retried = abap_true.
-            zial_cl_shm_area=>build( ).
-            RETRY.
-
-        ENDCASE.
-
-    ENDTRY.
+    zial_cl_shm_area=>detach_all_areas( ).
+    zial_cl_shm_area=>invalidate_area( ).
+    zial_cl_shm_area=>free_area( ).
 
   ENDMETHOD.
 
@@ -86,7 +47,7 @@ CLASS zial_cl_shm IMPLEMENTATION.
 
     TRY.
         DATA(lo_area) = zial_cl_shm_area=>attach_for_read( ).
-        rs_data = lo_area->root->get( ).
+        rt_shm_data = lo_area->root->unbind_data_ref_from_area( io_area = lo_area ).
         lo_area->detach( ).
 
       CATCH cx_root INTO DATA(lx_error).
@@ -107,13 +68,15 @@ CLASS zial_cl_shm IMPLEMENTATION.
   ENDMETHOD.
 
 
-  METHOD add.
+  METHOD set.
 
     DATA(lv_retried) = abap_false.
 
     TRY.
         DATA(lo_area) = zial_cl_shm_area=>attach_for_update( ).
-        lo_area->root->add( is_data ).
+        DATA(lt_shm_data) = lo_area->root->bind_data_ref_to_area( io_area     = lo_area
+                                                                  it_shm_data = it_shm_data ).
+        lo_area->root->set_shm_data( lt_shm_data ).
         lo_area->detach_commit( ).
 
       CATCH cx_root INTO DATA(lx_error).
@@ -130,22 +93,6 @@ CLASS zial_cl_shm IMPLEMENTATION.
         ENDCASE.
 
     ENDTRY.
-
-  ENDMETHOD.
-
-
-  METHOD clear.
-
-    set( VALUE #( ) ).
-
-  ENDMETHOD.
-
-
-  METHOD close.
-
-    zial_cl_shm_area=>detach_all_areas( ).
-    zial_cl_shm_area=>invalidate_area( ).
-    zial_cl_shm_area=>free_area( ).
 
   ENDMETHOD.
 
