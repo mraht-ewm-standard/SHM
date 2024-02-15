@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZIAL_CL_SHM</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Shared memory: API class</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+    <WITH_UNIT_TESTS>X</WITH_UNIT_TESTS>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Add data to buffered data</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CLEAR</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Clear all data in buffer</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Get buffered data</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SET</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Set buffered data</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD</CMPNAME>
+     <SCONAME>IS_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Data to be added to buffered data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD</CMPNAME>
+     <SCONAME>ZCX_ERROR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Error</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CLEAR</CMPNAME>
+     <SCONAME>ZCX_ERROR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Error</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET</CMPNAME>
+     <SCONAME>RS_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Buffered data</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET</CMPNAME>
+     <SCONAME>ZCX_ERROR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Error</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET</CMPNAME>
+     <SCONAME>IS_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Data to be buffered</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SET</CMPNAME>
+     <SCONAME>ZCX_ERROR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Error</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>
