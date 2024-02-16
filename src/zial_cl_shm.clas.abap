@@ -17,6 +17,7 @@ CLASS zial_cl_shm DEFINITION
 
   PUBLIC SECTION.
     CLASS-METHODS get
+      IMPORTING it_r_params        TYPE rseloption OPTIONAL
       RETURNING VALUE(rt_shm_data) TYPE zial_tt_shm_data
       RAISING   zcx_error.
 
@@ -46,7 +47,8 @@ CLASS zial_cl_shm IMPLEMENTATION.
 
     TRY.
         DATA(lo_area) = zial_cl_shm_area=>attach_for_read( ).
-        rt_shm_data = lo_area->root->unbind_data_ref_from_area( io_area = lo_area ).
+        rt_shm_data = lo_area->root->unbind_data_ref_from_area( io_area     = lo_area
+                                                                it_r_params = it_r_params ).
         lo_area->detach( ).
 
       CATCH cx_root INTO DATA(lx_error).
