@@ -107,7 +107,7 @@
       <item>
        <PNAME>VALUE</PNAME>
        <PTYP>V</PTYP>
-       <PDESC>Shared memory: Data in area</PDESC>
+       <PDESC>Dummy Table Type for generating attributes for Mass Update</PDESC>
        <PINDEX>0002</PINDEX>
        <XMLREF_TYP>D</XMLREF_TYP>
        <PSTRUC_TYP>T</PSTRUC_TYP>
@@ -137,7 +137,7 @@
           <sequence>
            <element name="DUMMY_1" minOccurs="0">
             <annotation>
-             <documentation>I==O==C==K==D=CHAR10=A=C=L=000010=doc=Character Field Length</documentation>
+             <documentation>I==O==C==K==D=CHAR10=A=C=L=000010=doc=Character Field with L</documentation>
             </annotation>
             <simpleType>
              <restriction base="string">
@@ -155,10 +155,10 @@
           <DUMMY_1>A</DUMMY_1>
          </item>
          <item>
-          <DUMMY_1>C</DUMMY_1>
+          <DUMMY_1>B</DUMMY_1>
          </item>
          <item>
-          <DUMMY_1>D</DUMMY_1>
+          <DUMMY_1>C</DUMMY_1>
          </item>
         </ddic:BUX_DUMMY_TABTYPE>
        </DEEP_DATA>
