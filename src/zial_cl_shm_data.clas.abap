@@ -22,7 +22,6 @@ CLASS zial_cl_shm_data DEFINITION
 
     METHODS unbind_data_ref_from_area
       IMPORTING io_area            TYPE REF TO zial_cl_shm_area
-                it_r_params        TYPE rseloption
       RETURNING VALUE(rt_shm_data) TYPE zial_tt_shm_data.
 
   PROTECTED SECTION.
@@ -98,7 +97,7 @@ CLASS zial_cl_shm_data IMPLEMENTATION.
   METHOD unbind_data_ref_from_area.
 
     DATA(lt_shm_data) = io_area->root->get_shm_data( ).
-    LOOP AT lt_shm_data ASSIGNING FIELD-SYMBOL(<ls_shm_data>) WHERE param IN it_r_params.
+    LOOP AT lt_shm_data ASSIGNING FIELD-SYMBOL(<ls_shm_data>).
       INSERT VALUE #( param = <ls_shm_data>-param ) INTO TABLE rt_shm_data ASSIGNING FIELD-SYMBOL(<rs_shm_data>).
       ASSIGN <ls_shm_data>-value->* TO FIELD-SYMBOL(<ls_value>).
       CREATE DATA <rs_shm_data>-value LIKE <ls_value>.
