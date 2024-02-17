@@ -12,7 +12,7 @@
 "! <li>SHMM (Content)</li>
 "! </ul></p>
 CLASS zial_cl_shm DEFINITION
-  PUBLIC FINAL
+  PUBLIC
   CREATE PUBLIC.
 
   PUBLIC SECTION.
@@ -27,7 +27,7 @@ CLASS zial_cl_shm DEFINITION
     CLASS-METHODS free.
 
     CLASS-METHODS get_by_component
-      IMPORTING iv_component_id   TYPE  zial_de_shm_component_id
+      IMPORTING iv_component_id   TYPE zial_de_shm_component_id
                 ir_component_data TYPE REF TO data
       RAISING   zcx_error.
 
@@ -35,6 +35,18 @@ CLASS zial_cl_shm DEFINITION
       IMPORTING iv_component_id   TYPE zial_de_shm_component_id
                 ir_component_data TYPE REF TO data
       RAISING   zcx_error.
+
+    CLASS-METHODS get_by_component_param
+      IMPORTING iv_param_name TYPE zial_de_shm_parameter_name
+                ir_param_data TYPE REF TO data
+      RAISING   zcx_error.
+
+    CLASS-METHODS set_by_component_param
+      IMPORTING iv_param_name TYPE zial_de_shm_parameter_name
+                ir_param_data TYPE REF TO data
+      RAISING   zcx_error.
+
+  PROTECTED SECTION.
 
 ENDCLASS.
 
@@ -145,27 +157,67 @@ CLASS zial_cl_shm IMPLEMENTATION.
     DATA(lo_abap_structdescr) = CAST cl_abap_structdescr( cl_abap_structdescr=>describe_by_data( <ls_component_data> ) ).
     LOOP AT lo_abap_structdescr->components ASSIGNING FIELD-SYMBOL(<ls_abap_component>).
 
-      ASSIGN COMPONENT <ls_abap_component>-name OF STRUCTURE <ls_component_data> TO FIELD-SYMBOL(<ix_data>).
-      CHECK <ix_data> IS ASSIGNED.
+      ASSIGN COMPONENT <ls_abap_component>-name OF STRUCTURE <ls_component_data> TO FIELD-SYMBOL(<i_component_data>).
+      CHECK <i_component_data> IS ASSIGNED.
 
       DATA(lv_param_name) = |{ iv_component_id }_{ <ls_abap_component>-name }|.
       ASSIGN lt_shm_data[ param = lv_param_name ]-value TO FIELD-SYMBOL(<lr_shm_value>).
       IF <lr_shm_value> IS NOT ASSIGNED.
         INSERT VALUE #( param = lv_param_name ) INTO TABLE lt_shm_data ASSIGNING FIELD-SYMBOL(<ls_shm_data>).
-        CREATE DATA <ls_shm_data>-value LIKE <ix_data>.
+        CREATE DATA <ls_shm_data>-value LIKE <i_component_data>.
         ASSIGN <ls_shm_data>-value TO <lr_shm_value>.
       ENDIF.
 
       ASSIGN <lr_shm_value>->* TO FIELD-SYMBOL(<l_shm_value>).
       CHECK <l_shm_value> IS ASSIGNED.
 
-      <l_shm_value> = <ix_data>.
+      <l_shm_value> = <i_component_data>.
 
-      UNASSIGN: <ix_data>, <l_shm_value>, <lr_shm_value>, <ls_shm_data>.
+      UNASSIGN: <i_component_data>, <l_shm_value>, <lr_shm_value>, <ls_shm_data>.
 
     ENDLOOP.
 
     CHECK lt_shm_data NE lt_shm_data_bck.
+    zial_cl_shm=>set( lt_shm_data ).
+
+  ENDMETHOD.
+
+
+  METHOD get_by_component_param.
+
+    ASSIGN ir_param_data->* TO FIELD-SYMBOL(<l_param_data>).
+    CHECK <l_param_data> IS ASSIGNED.
+
+    DATA(lt_shm_data) = zial_cl_shm=>get( ).
+    ASSIGN lt_shm_data[ param = iv_param_name ]-value TO FIELD-SYMBOL(<lr_shm_value>).
+    CHECK <lr_shm_value> IS ASSIGNED.
+
+    ASSIGN <lr_shm_value>->* TO FIELD-SYMBOL(<l_shm_value>).
+    CHECK <l_shm_value> IS ASSIGNED.
+
+    <l_param_data> = <l_shm_value>.
+
+  ENDMETHOD.
+
+
+  METHOD set_by_component_param.
+
+    ASSIGN ir_param_data->* TO FIELD-SYMBOL(<l_param_data>).
+    CHECK <l_param_data> IS ASSIGNED.
+
+    DATA(lt_shm_data) = zial_cl_shm=>get( ).
+    ASSIGN lt_shm_data[ param = iv_param_name ]-value TO FIELD-SYMBOL(<lr_shm_value>).
+    IF <lr_shm_value> IS NOT ASSIGNED.
+      INSERT VALUE #( param = iv_param_name ) INTO TABLE lt_shm_data ASSIGNING FIELD-SYMBOL(<ls_shm_data>).
+      CREATE DATA <ls_shm_data>-value LIKE <l_param_data>.
+      ASSIGN <ls_shm_data>-value TO <lr_shm_value>.
+    ENDIF.
+
+    ASSIGN <lr_shm_value>->* TO FIELD-SYMBOL(<l_shm_value>).
+    CHECK <l_shm_value> IS ASSIGNED.
+
+    <l_shm_value> = <l_param_data>.
+
     zial_cl_shm=>set( lt_shm_data ).
 
   ENDMETHOD.
