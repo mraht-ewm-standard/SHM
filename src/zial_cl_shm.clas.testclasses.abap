@@ -9,7 +9,7 @@ CLASS ltc_shm DEFINITION FINAL
              value TYPE bux_dummy_tabtype,
            END OF s_tdc_data.
 
-    CONSTANTS mc_tdc_cnt           TYPE etobj_name VALUE 'ZIAL_CL_SHM'.
+    CONSTANTS mc_tdc_cnt           TYPE etobj_name VALUE 'ZIAL_TDC_SHM'.
     CONSTANTS mc_tdc_dflt_var_name TYPE etvar_id   VALUE 'ECATTDEFAULT'.
 
     CLASS-DATA mo_tdc          TYPE REF TO cl_apl_ecatt_tdc_api.

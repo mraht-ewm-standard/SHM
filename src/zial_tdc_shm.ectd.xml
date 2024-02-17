@@ -24,7 +24,7 @@
       <BACKUP/>
      </ETOBJ_GNDT>
      <ETOBJNOVER>
-      <NAME>ZIAL_CL_SHM</NAME>
+      <NAME>ZIAL_TDC_SHM</NAME>
       <TYPE>ECTD</TYPE>
       <TWB_RESP></TWB_RESP>
       <TWB_DISTL>B</TWB_DISTL>
@@ -156,15 +156,21 @@
          </item>
          
          
+         
+         
          <item>
           <DUMMY_1>C</DUMMY_1>
          </item>
+         
+         
          
          
          <item>
           <DUMMY_1>D</DUMMY_1>
          </item>
          
+         
+        
         
         </ddic:BUX_DUMMY_TABTYPE>
        </DEEP_DATA>
