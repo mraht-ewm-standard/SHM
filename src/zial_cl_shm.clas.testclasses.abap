@@ -9,8 +9,7 @@ CLASS ltc_shm DEFINITION FINAL
              value TYPE bux_dummy_tabtype,
            END OF s_tdc_data.
 
-    CONSTANTS mc_tdc_cnt           TYPE etobj_name VALUE 'ZIAL_TDC_SHM'.
-    CONSTANTS mc_tdc_dflt_var_name TYPE etvar_id   VALUE 'ECATTDEFAULT'.
+    CONSTANTS mc_tdc_cnt TYPE etobj_name VALUE 'ZIAL_TDC_SHM'.
 
     CLASS-DATA mo_aunit    TYPE REF TO zial_cl_aunit.
     CLASS-DATA ms_tdc_data TYPE s_tdc_data.
@@ -77,22 +76,22 @@ CLASS ltc_shm IMPLEMENTATION.
 
   METHOD t0002_get.
 
-*    CHECK 1 = 2. ##DEACTIVE.
+    " CHECK 1 = 2. ##DEACTIVE.
 
-    DATA(ls_data) = zial_cl_shm=>get( ).
-    cl_abap_unit_assert=>assert_not_initial( act = ls_data ).
+    DATA(lt_shm_data) = zial_cl_shm=>get( ).
+    cl_abap_unit_assert=>assert_not_initial( act = lt_shm_data ).
 
   ENDMETHOD.
 
 
   METHOD t0003_free.
 
-*    CHECK 1 = 2. ##DEACTIVE.
+    " CHECK 1 = 2. ##DEACTIVE.
 
     zial_cl_shm=>free( ).
-    DATA(ls_shm_data) = zial_cl_shm=>get( ).
+    DATA(lt_shm_data) = zial_cl_shm=>get( ).
 
-    cl_abap_unit_assert=>assert_initial( act = ls_shm_data ).
+    cl_abap_unit_assert=>assert_initial( act = lt_shm_data ).
 
   ENDMETHOD.
 

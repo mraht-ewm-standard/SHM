@@ -131,7 +131,8 @@ CLASS zial_cl_shm IMPLEMENTATION.
       ASSIGN COMPONENT <ls_abap_component>-name OF STRUCTURE <ls_component_data> TO FIELD-SYMBOL(<rx_data>).
       CHECK <rx_data> IS ASSIGNED.
 
-      ASSIGN lt_shm_data[ param = |{ iv_component_id }_{ <ls_abap_component>-name }| ]-value TO FIELD-SYMBOL(<lr_shm_value>).
+      DATA(lv_param) = CONV zial_de_shm_parameter_name( |{ iv_component_id }_{ <ls_abap_component>-name }| ).
+      ASSIGN lt_shm_data[ param = lv_param ]-value TO FIELD-SYMBOL(<lr_shm_value>).
       CHECK <lr_shm_value> IS ASSIGNED.
 
       ASSIGN <lr_shm_value>->* TO FIELD-SYMBOL(<l_shm_value>).
@@ -160,7 +161,7 @@ CLASS zial_cl_shm IMPLEMENTATION.
       ASSIGN COMPONENT <ls_abap_component>-name OF STRUCTURE <ls_component_data> TO FIELD-SYMBOL(<i_component_data>).
       CHECK <i_component_data> IS ASSIGNED.
 
-      DATA(lv_param_name) = |{ iv_component_id }_{ <ls_abap_component>-name }|.
+      DATA(lv_param_name) = CONV zial_de_shm_parameter_name( |{ iv_component_id }_{ <ls_abap_component>-name }| ).
       ASSIGN lt_shm_data[ param = lv_param_name ]-value TO FIELD-SYMBOL(<lr_shm_value>).
       IF <lr_shm_value> IS NOT ASSIGNED.
         INSERT VALUE #( param = lv_param_name ) INTO TABLE lt_shm_data ASSIGNING FIELD-SYMBOL(<ls_shm_data>).
