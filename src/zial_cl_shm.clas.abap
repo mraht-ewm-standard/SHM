@@ -12,7 +12,7 @@
 "! <li>SHMM (Content)</li>
 "! </ul></p>
 CLASS zial_cl_shm DEFINITION
-  PUBLIC
+  PUBLIC FINAL
   CREATE PUBLIC.
 
   PUBLIC SECTION.
@@ -45,8 +45,6 @@ CLASS zial_cl_shm DEFINITION
       IMPORTING iv_param_name TYPE zial_de_shm_parameter_name
                 ir_param_data TYPE REF TO data
       RAISING   zcx_error.
-
-  PROTECTED SECTION.
 
 ENDCLASS.
 
@@ -147,6 +145,23 @@ CLASS zial_cl_shm IMPLEMENTATION.
   ENDMETHOD.
 
 
+  METHOD get_by_component_param.
+
+    ASSIGN ir_param_data->* TO FIELD-SYMBOL(<l_param_data>).
+    CHECK <l_param_data> IS ASSIGNED.
+
+    DATA(lt_shm_data) = zial_cl_shm=>get( ).
+    ASSIGN lt_shm_data[ param = iv_param_name ]-value TO FIELD-SYMBOL(<lr_shm_value>).
+    CHECK <lr_shm_value> IS ASSIGNED.
+
+    ASSIGN <lr_shm_value>->* TO FIELD-SYMBOL(<l_shm_value>).
+    CHECK <l_shm_value> IS ASSIGNED.
+
+    <l_param_data> = <l_shm_value>.
+
+  ENDMETHOD.
+
+
   METHOD set_by_component.
 
     DATA(lt_shm_data) = zial_cl_shm=>get( ).
@@ -180,23 +195,6 @@ CLASS zial_cl_shm IMPLEMENTATION.
 
     CHECK lt_shm_data NE lt_shm_data_bck.
     zial_cl_shm=>set( lt_shm_data ).
-
-  ENDMETHOD.
-
-
-  METHOD get_by_component_param.
-
-    ASSIGN ir_param_data->* TO FIELD-SYMBOL(<l_param_data>).
-    CHECK <l_param_data> IS ASSIGNED.
-
-    DATA(lt_shm_data) = zial_cl_shm=>get( ).
-    ASSIGN lt_shm_data[ param = iv_param_name ]-value TO FIELD-SYMBOL(<lr_shm_value>).
-    CHECK <lr_shm_value> IS ASSIGNED.
-
-    ASSIGN <lr_shm_value>->* TO FIELD-SYMBOL(<l_shm_value>).
-    CHECK <l_shm_value> IS ASSIGNED.
-
-    <l_param_data> = <l_shm_value>.
 
   ENDMETHOD.
 
