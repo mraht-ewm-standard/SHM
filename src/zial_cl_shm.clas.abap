@@ -136,7 +136,7 @@ CLASS zial_cl_shm IMPLEMENTATION.
       ASSIGN <lr_shm_value>->* TO FIELD-SYMBOL(<l_shm_value>).
       CHECK <l_shm_value> IS ASSIGNED.
 
-      <rx_data> = <l_shm_value>.
+      <rx_data> = CORRESPONDING #( <l_shm_value> ). " To avoid dumps in case of changed structures
 
       UNASSIGN: <rx_data>, <l_shm_value>, <lr_shm_value>.
 
@@ -157,7 +157,7 @@ CLASS zial_cl_shm IMPLEMENTATION.
     ASSIGN <lr_shm_value>->* TO FIELD-SYMBOL(<l_shm_value>).
     CHECK <l_shm_value> IS ASSIGNED.
 
-    <l_param_data> = <l_shm_value>.
+    <l_param_data> = CORRESPONDING #( <l_shm_value> ). " To avoid dumps in case of changed structures
 
   ENDMETHOD.
 
@@ -187,7 +187,7 @@ CLASS zial_cl_shm IMPLEMENTATION.
       ASSIGN <lr_shm_value>->* TO FIELD-SYMBOL(<l_shm_value>).
       CHECK <l_shm_value> IS ASSIGNED.
 
-      <l_shm_value> = <i_component_data>.
+      <l_shm_value> = CORRESPONDING #( <i_component_data> ). " To avoid dumps in case of changed structures
 
       UNASSIGN: <i_component_data>, <l_shm_value>, <lr_shm_value>, <ls_shm_data>.
 
@@ -215,7 +215,7 @@ CLASS zial_cl_shm IMPLEMENTATION.
     ASSIGN <lr_shm_value>->* TO FIELD-SYMBOL(<l_shm_value>).
     CHECK <l_shm_value> IS ASSIGNED.
 
-    <l_shm_value> = <l_param_data>.
+    <l_shm_value> = CORRESPONDING #( <l_param_data> ). " To avoid dumps in case of changed structures
 
     zial_cl_shm=>set( lt_shm_data ).
 
