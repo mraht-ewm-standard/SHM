@@ -311,6 +311,12 @@
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>FREE_AREA</CMPNAME>
+     <SCONAME>AFFECT_SERVER</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Servers on which the area is deleted or invalidated</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FREE_AREA</CMPNAME>
      <SCONAME>CX_SHM_PARAMETER_ERROR</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Incorrect parameter passed</DESCRIPT>
@@ -326,6 +332,12 @@
      <SCONAME>TERMINATE_CHANGER</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Writing processes will be ended</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FREE_INSTANCE</CMPNAME>
+     <SCONAME>AFFECT_SERVER</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Servers on which the area is deleted or invalidated</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>FREE_INSTANCE</CMPNAME>
@@ -365,6 +377,12 @@
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>INVALIDATE_AREA</CMPNAME>
+     <SCONAME>AFFECT_SERVER</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Servers on which the area is deleted or invalidated</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>INVALIDATE_AREA</CMPNAME>
      <SCONAME>CX_SHM_PARAMETER_ERROR</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Incorrect parameter passed</DESCRIPT>
@@ -380,6 +398,12 @@
      <SCONAME>TERMINATE_CHANGER</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Active writing processes will be ended</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>INVALIDATE_INSTANCE</CMPNAME>
+     <SCONAME>AFFECT_SERVER</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Servers on which the area is deleted or invalidated</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>INVALIDATE_INSTANCE</CMPNAME>
