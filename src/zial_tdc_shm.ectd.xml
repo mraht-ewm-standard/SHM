@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_ECTD" serializer_version="v1.0.0">
+ <VERSIONS>
+  <VERSION>
+   <ECTD VERSION="1.5">
+    <ATTRIBUTES>
+     <ETOBJ_GNDT>
+      <VERSION>00000001</VERSION>
+      <TWB_TITLE>Test data: ZIAL_CL_BUFFER</TWB_TITLE>
+      <SOFTCOMP/>
+      <TWB_DEP_RF/>
+      <TWB_DEP_RT/>
+      <TWB_STATUS>X</TWB_STATUS>
+      <TWB_RELE>N</TWB_RELE>
+      <FUSER></FUSER>
+      <FDATE></FDATE>
+      <LUSER></LUSER>
+      <LDATE></LDATE>
+      <LTIME></LTIME>
+      <REL_BAS_F/>
+      <REL_BAS_T/>
+      <SERVICE/>
+      <PVNR/>
+      <BACKUP/>
+     </ETOBJ_GNDT>
+     <ETOBJNOVER>
+      <NAME>ZIAL_TDC_SHM</NAME>
+      <TYPE>ECTD</TYPE>
+      <TWB_RESP></TWB_RESP>
+      <TWB_DISTL>B</TWB_DISTL>
+      <TWB_EUBOBJ/>
+      <TWB_EUTYPE/>
+      <DEVCLASS></DEVCLASS>
+      <MASTERLANG>E</MASTERLANG>
+      <TADIR_RESP></TADIR_RESP>
+      <FRANGE>SCM-EWM</FRANGE>
+      <BCSET_MODE/>
+      <API_MODE/>
+      <COL_TSTOBJDATA/>
+      <NO_TRANSLATION/>
+     </ETOBJNOVER>
+     <ETOBJ_DOC>
+      <SEARCH_1/>
+      <SEARCH_2/>
+      <SEARCH_3/>
+      <SEARCH_4/>
+      <SEARCH_5/>
+      <SEARCH_6/>
+      <SEARCH_7/>
+      <SEARCH_8/>
+      <SEARCH_9/>
+      <SEARCH_10/>
+      <S_DOC_ID/>
+      <S_OBJ_ID/>
+      <S_DOC_TITL/>
+     </ETOBJ_DOC>
+     <ETOBJ_CNST>
+      <TWB_DEP_S/>
+      <TWB_DEPV_S/>
+      <TWB_DEP_L/>
+      <TWB_DEPV_L/>
+      <TWB_USE_A/>
+      <TWB_USE_P/>
+      <TWB_USE_H/>
+      <TWB_USE_E/>
+      <REUSE/>
+      <TWB_DEP_C/>
+      <TWB_DEP_VC/>
+      <TWB_DEP_F/>
+      <TWB_DEP_VF/>
+      <TWB_DEP_P/>
+      <TWB_DEP_VP/>
+      <TWB_DEP_DB/>
+      <TWB_DEPVDB/>
+      <TWB_WKREQ>0.0</TWB_WKREQ>
+      <TWB_WKUNIT>MIN</TWB_WKUNIT>
+      <TWB_PRIO>3</TWB_PRIO>
+     </ETOBJ_CNST>
+     <ETSC_TSYS>
+      <SYSTEMDATA/>
+      <TESTSYSTEM/>
+     </ETSC_TSYS>
+     <ETSYS_COMP_TABTYPE/>
+     <ETSYS_REL_TABTYPE/>
+     <ETBF_OBJ_TABTYPE/>
+     <ETBF_VER_TABTYPE/>
+    </ATTRIBUTES>
+    <PARAMETERS>
+     <ETPAR_GUIX>
+      <item>
+       <PNAME>VALUE</PNAME>
+       <PTYP>V</PTYP>
+       <PDESC>Dummy Table Type for generating attributes for Mass Update</PDESC>
+       <PINDEX>0002</PINDEX>
+       <XMLREF_TYP>D</XMLREF_TYP>
+       <PSTRUC_TYP>T</PSTRUC_TYP>
+       <PREF_NAME>BUX_DUMMY_TABTYPE</PREF_NAME>
+       <PDATLEN>0000</PDATLEN>
+       <PINTLEN>000000</PINTLEN>
+       <PDECIMALS>000000</PDECIMALS>
+       <SORT_LNR>0001</SORT_LNR>
+       <PREF_NAME2>BUX_DUMMY_TABTYPE</PREF_NAME2>
+       <VALUE>&lt;VALUE&gt;</VALUE>
+       <VAL_TYPE>T</VAL_TYPE>
+       <TAB_INDEX>0</TAB_INDEX>
+       <DEEP_STRU>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xml.sap.com/2003/05/eCATT/ddic" version="1.0">
+         <xsd:complexType name="BUX_DUMMY_TABTYPE">
+          <annotation>
+           <documentation>I==O==C=T=K==D=BUX_DUMMY_TABTYPE=A=h=L=000000=doc=Dummy Table Type for generating attributes for Mass Update</documentation>
+          </annotation>
+          <sequence>
+           <element name="item" type="BUX_DUMMY_STRUCTURE" minOccurs="0" maxOccurs="unbounded"/>
+          </sequence>
+         </xsd:complexType>
+         <xsd:complexType name="BUX_DUMMY_STRUCTURE">
+          <annotation>
+           <documentation>I==O==C=S=K==D=BUX_DUMMY_STRUCTURE=A=u=L=000000=doc=Dummy St</documentation>
+          </annotation>
+          <sequence>
+           <element name="DUMMY_1" minOccurs="0">
+            <annotation>
+             <documentation>I==O==C==K==D=CHAR10=A=C=L=000010=doc=Character Field with L</documentation>
+            </annotation>
+            <simpleType>
+             <restriction base="string">
+              <maxLength value="10"/>
+             </restriction>
+            </simpleType>
+           </element>
+          </sequence>
+         </xsd:complexType>
+        </xsd:schema>
+       </DEEP_STRU>
+       <DEEP_DATA>
+        <ddic:BUX_DUMMY_TABTYPE xmlns:ddic="http://xml.sap.com/2003/05/eCATT/ddic">
+         <item>
+          <DUMMY_1>A</DUMMY_1>
+         </item>
+         <item>
+          <DUMMY_1>B</DUMMY_1>
+         </item>
+         <item>
+          <DUMMY_1>C</DUMMY_1>
+         </item>
+        </ddic:BUX_DUMMY_TABTYPE>
+       </DEEP_DATA>
+      </item>
+      <item>
+       <PNAME>PARAM</PNAME>
+       <PTYP>V</PTYP>
+       <PDESC>Shared memory: Parameter name</PDESC>
+       <PINDEX>0001</PINDEX>
+       <PREF_TYPE>DTEL</PREF_TYPE>
+       <PREF_NAME>ZIAL_DE_SHM_PARAMETER_NAME</PREF_NAME>
+       <PDATTYP>CHAR</PDATTYP>
+       <PDATLEN>0030</PDATLEN>
+       <PINTTYP>C</PINTTYP>
+       <PINTLEN>000060</PINTLEN>
+       <PDECIMALS>000000</PDECIMALS>
+       <SORT_LNR>0002</SORT_LNR>
+       <PREF_NAME2>ZIAL_DE_SHM_PARAMETER_NAME</PREF_NAME2>
+       <VALUE>CHARS_TO_EXCLUDE</VALUE>
+       <TAB_INDEX>0</TAB_INDEX>
+      </item>
+     </ETPAR_GUIX>
+     <ETPAR_VARI/>
+    </PARAMETERS>
+    <VARIANT_MODE>
+     <ETVAR_EXT></ETVAR_EXT>
+    </VARIANT_MODE>
+   </ECTD>
+  </VERSION>
+ </VERSIONS>
+</abapGit>
