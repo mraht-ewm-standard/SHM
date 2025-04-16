@@ -88,6 +88,23 @@
     <PARAMETERS>
      <ETPAR_GUIX>
       <item>
+       <PNAME>PARAM</PNAME>
+       <PTYP>V</PTYP>
+       <PDESC>Shared memory: Parameter name</PDESC>
+       <PINDEX>0001</PINDEX>
+       <PREF_TYPE>DTEL</PREF_TYPE>
+       <PREF_NAME>ZIAL_DE_SHM_PARAMETER_NAME</PREF_NAME>
+       <PDATTYP>CHAR</PDATTYP>
+       <PDATLEN>0030</PDATLEN>
+       <PINTTYP>C</PINTTYP>
+       <PINTLEN>000060</PINTLEN>
+       <PDECIMALS>000000</PDECIMALS>
+       <SORT_LNR>0001</SORT_LNR>
+       <PREF_NAME2>ZIAL_DE_SHM_PARAMETER_NAME</PREF_NAME2>
+       <VALUE>CHARS_TO_EXCLUDE</VALUE>
+       <TAB_INDEX>0</TAB_INDEX>
+      </item>
+      <item>
        <PNAME>VALUE</PNAME>
        <PTYP>V</PTYP>
        <PDESC>Dummy Table Type for generating attributes for Mass Update</PDESC>
@@ -98,7 +115,7 @@
        <PDATLEN>0000</PDATLEN>
        <PINTLEN>000000</PINTLEN>
        <PDECIMALS>000000</PDECIMALS>
-       <SORT_LNR>0001</SORT_LNR>
+       <SORT_LNR>0002</SORT_LNR>
        <PREF_NAME2>BUX_DUMMY_TABTYPE</PREF_NAME2>
        <VALUE>&lt;VALUE&gt;</VALUE>
        <VAL_TYPE>T</VAL_TYPE>
@@ -137,31 +154,20 @@
          <item>
           <DUMMY_1>A</DUMMY_1>
          </item>
+         
+         
          <item>
           <DUMMY_1>B</DUMMY_1>
          </item>
+         
+         
          <item>
           <DUMMY_1>C</DUMMY_1>
          </item>
+         
+        
         </ddic:BUX_DUMMY_TABTYPE>
        </DEEP_DATA>
-      </item>
-      <item>
-       <PNAME>PARAM</PNAME>
-       <PTYP>V</PTYP>
-       <PDESC>Shared memory: Parameter name</PDESC>
-       <PINDEX>0001</PINDEX>
-       <PREF_TYPE>DTEL</PREF_TYPE>
-       <PREF_NAME>ZIAL_DE_SHM_PARAMETER_NAME</PREF_NAME>
-       <PDATTYP>CHAR</PDATTYP>
-       <PDATLEN>0030</PDATLEN>
-       <PINTTYP>C</PINTTYP>
-       <PINTLEN>000060</PINTLEN>
-       <PDECIMALS>000000</PDECIMALS>
-       <SORT_LNR>0002</SORT_LNR>
-       <PREF_NAME2>ZIAL_DE_SHM_PARAMETER_NAME</PREF_NAME2>
-       <VALUE>CHARS_TO_EXCLUDE</VALUE>
-       <TAB_INDEX>0</TAB_INDEX>
       </item>
      </ETPAR_GUIX>
      <ETPAR_VARI/>

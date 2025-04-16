@@ -3,16 +3,22 @@
  <asx:values>
   <DATA>
    <GROUP_ID>c-a-s.de</GROUP_ID>
-   <ARTIFACT_ID>ewm-shm</ARTIFACT_ID>
+   <ARTIFACT_ID>shm</ARTIFACT_ID>
    <VERSION>15.02.2024.001-rc</VERSION>
    <REPOSITORY_TYPE>abapGit</REPOSITORY_TYPE>
    <GIT_URL>https://github.com/mraht-ewm-standard/SHM.git</GIT_URL>
    <DEPENDENCIES>
     <item>
      <GROUP_ID>c-a-s.de</GROUP_ID>
-     <ARTIFACT_ID>ewm-exc-mgmt</ARTIFACT_ID>
+     <ARTIFACT_ID>exc-mgmt</ARTIFACT_ID>
      <GIT_URL>https://github.com/mraht-ewm-standard/EXC_MGMT.git</GIT_URL>
      <TARGET_PACKAGE>ZIAL_EXC_MGMT</TARGET_PACKAGE>
+    </item>
+    <item>
+     <GROUP_ID>c-a-s.de</GROUP_ID>
+     <ARTIFACT_ID>aunit</ARTIFACT_ID>
+     <GIT_URL>https://github.com/mraht-ewm-standard/AUNIT.git</GIT_URL>
+     <TARGET_PACKAGE>ZIAL_AUNIT</TARGET_PACKAGE>
     </item>
    </DEPENDENCIES>
   </DATA>
