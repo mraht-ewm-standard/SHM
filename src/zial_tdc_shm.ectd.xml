@@ -6,7 +6,7 @@
     <ATTRIBUTES>
      <ETOBJ_GNDT>
       <VERSION>00000001</VERSION>
-      <TWB_TITLE>Test data: ZIAL_CL_BUFFER</TWB_TITLE>
+      <TWB_TITLE>Shared Memory</TWB_TITLE>
       <SOFTCOMP/>
       <TWB_DEP_RF/>
       <TWB_DEP_RT/>

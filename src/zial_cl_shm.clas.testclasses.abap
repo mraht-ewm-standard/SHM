@@ -1,4 +1,4 @@
-"! <p class="shorttext synchronized">ABAP Unit Test Class Template</p>
+"! <p class="shorttext synchronized">Shared memory: API class</p>
 CLASS ltc_shm DEFINITION FINAL
   CREATE PUBLIC
   FOR TESTING RISK LEVEL HARMLESS.
