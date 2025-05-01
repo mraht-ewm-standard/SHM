@@ -12,13 +12,11 @@
      <GROUP_ID>c-a-s.de</GROUP_ID>
      <ARTIFACT_ID>exc-mgmt</ARTIFACT_ID>
      <GIT_URL>https://github.com/mraht-ewm-standard/EXC_MGMT.git</GIT_URL>
-     <TARGET_PACKAGE>ZIAL_EXC_MGMT</TARGET_PACKAGE>
     </item>
     <item>
      <GROUP_ID>c-a-s.de</GROUP_ID>
      <ARTIFACT_ID>aunit</ARTIFACT_ID>
      <GIT_URL>https://github.com/mraht-ewm-standard/AUNIT.git</GIT_URL>
-     <TARGET_PACKAGE>ZIAL_AUNIT</TARGET_PACKAGE>
     </item>
    </DEPENDENCIES>
   </DATA>

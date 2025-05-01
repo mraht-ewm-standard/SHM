@@ -22,12 +22,10 @@ CLASS zial_apack_shm IMPLEMENTATION.
 
     if_apack_manifest~descriptor-dependencies = VALUE #(
         group_id = 'c-a-s.de'
-        ( artifact_id    = 'exc-mgmt'
-          target_package = 'ZIAL_EXC_MGMT'
-          git_url        = 'https://github.com/mraht-ewm-standard/EXC_MGMT.git' )
-        ( artifact_id    = 'aunit'
-          target_package = 'ZIAL_AUNIT'
-          git_url        = 'https://github.com/mraht-ewm-standard/AUNIT.git' ) ) ##NO_TEXT.
+        ( artifact_id = 'exc-mgmt'
+          git_url     = 'https://github.com/mraht-ewm-standard/EXC_MGMT.git' )
+        ( artifact_id = 'aunit'
+          git_url     = 'https://github.com/mraht-ewm-standard/AUNIT.git' ) ) ##NO_TEXT.
 
   ENDMETHOD.
 
