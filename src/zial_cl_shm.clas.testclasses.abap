@@ -62,7 +62,7 @@ CLASS ltc_shm IMPLEMENTATION.
 
   METHOD t0001_set.
 
-    CHECK mo_aunit->active( abap_true ).
+    CHECK mo_aunit->is_active( abap_true ).
 
     DATA(lt_shm_data) = VALUE zial_tt_shm_data( ( param = ms_tdc_data-param
                                                   value = REF #( ms_tdc_data-value ) ) ).
@@ -76,7 +76,7 @@ CLASS ltc_shm IMPLEMENTATION.
 
   METHOD t0002_get.
 
-    CHECK mo_aunit->active( abap_true ).
+    CHECK mo_aunit->is_active( abap_true ).
 
     DATA(lt_shm_data) = zial_cl_shm=>get( ).
     cl_abap_unit_assert=>assert_not_initial( act = lt_shm_data ).
@@ -86,7 +86,7 @@ CLASS ltc_shm IMPLEMENTATION.
 
   METHOD t0003_free.
 
-    CHECK mo_aunit->active( abap_true ).
+    CHECK mo_aunit->is_active( abap_true ).
 
     zial_cl_shm=>free( ).
     DATA(lt_shm_data) = zial_cl_shm=>get( ).
